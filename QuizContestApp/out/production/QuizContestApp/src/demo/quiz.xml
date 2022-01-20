@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Quiz>
+    <Questions>
+        <Question id="Who won the 2009 year ODI World Cup?">
+            <OptionOne>Pakistan</OptionOne>
+            <OptionTwo>India</OptionTwo>
+            <OptionThree>Australia</OptionThree>
+            <OptionFour>Sri Lanka</OptionFour>
+            <Answer>Australia</Answer>
+        </Question>
+        <Question id="Which is the longest river in the world?">
+            <OptionOne>Nile</OptionOne>
+            <OptionTwo>Amazon</OptionTwo>
+            <OptionThree>Ganges</OptionThree>
+            <OptionFour>None of these</OptionFour>
+            <Answer>Nile</Answer>
+        </Question>
+        <Question id="Which is not a java feature">
+            <OptionOne>Encapsulation</OptionOne>
+            <OptionTwo>Abstraction</OptionTwo>
+            <OptionThree>Insulation</OptionThree>
+            <OptionFour>Inheritance</OptionFour>
+            <Answer>Insulation</Answer>
+        </Question>
+
+    </Questions>
+</Quiz>
