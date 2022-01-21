@@ -3,10 +3,7 @@ package src.demo;
 import src.demo.mapper.Mapper;
 import src.demo.pojo.Question;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class QuizApp {
 
@@ -20,19 +17,25 @@ public class QuizApp {
         int score = 0;
         Scanner sc = new Scanner(System.in);
         Iterator<Question> itr = Mapper.quizQuestionMapper.iterator();
+        Map<String, String> optionAnswerMapper = new HashMap<>();
         while(itr.hasNext()) {
             Question question = itr.next();
             System.out.println(question.getId());
             System.out.println("");
-            System.out.println(question.getOptionOne());
-            System.out.println(question.getOptionTwo());
-            System.out.println(question.getOptionThree());
-            System.out.println(question.getOptionFour());
+            optionAnswerMapper.put("a", question.getOptionOne());
+            optionAnswerMapper.put("b", question.getOptionTwo());
+            optionAnswerMapper.put("c", question.getOptionThree());
+            optionAnswerMapper.put("d", question.getOptionFour());
+            System.out.println("a. "+question.getOptionOne());
+            System.out.println("b. "+question.getOptionTwo());
+            System.out.println("c. "+question.getOptionThree());
+            System.out.println("d. "+question.getOptionFour());
             System.out.println("");
-            System.out.println("Please enter the answer...");
+            System.out.println("Please choose the correct option");
             String candidateAnswer = sc.nextLine();
-            if(question.getAnswer().equalsIgnoreCase(candidateAnswer)) {
+            if(optionAnswerMapper.get(candidateAnswer).equalsIgnoreCase(question.getAnswer())) {
                 System.out.println("Your answer is correct");
+                optionAnswerMapper.clear();
                 System.out.println("");
                 score +=10;
             } else {
